@@ -7,30 +7,30 @@
 
 defined('_JEXEC') or die();
 
-class TodoDispatcher extends FOFDispatcher
+class BgDispatcher extends FOFDispatcher
 {
 	public $defaultView = 'profiles';
 
-	public function onBeforeDispatch()
-	{
-		$result = parent::onBeforeDispatch();
-
-		if ($result)
-		{
-			$strapperInclude = JPATH_ROOT . '/media/akeeba_strapper/strapper.php';
-
-			if (@file_exists($strapperInclude))
-			{
-				@include_once $strapperInclude;
-			}
-
-			if (class_exists('AkeebaStrapper'))
-			{
-				AkeebaStrapper::bootstrap();
-				AkeebaStrapper::jQueryUI();
-			}
-		}
-
-		return $result;
-	}
+//	public function onBeforeDispatch()
+//	{
+//		$result = parent::onBeforeDispatch();
+//
+//		if ($result)
+//		{
+//			$strapperInclude = JPATH_ROOT . '/media/akeeba_strapper/strapper.php';
+//
+//			if (@file_exists($strapperInclude))
+//			{
+//				@include_once $strapperInclude;
+//			}
+//
+//			if (class_exists('AkeebaStrapper'))
+//			{
+//				AkeebaStrapper::bootstrap();
+//				AkeebaStrapper::jQueryUI();
+//			}
+//		}
+//
+//		return $result;
+//	}
 }
