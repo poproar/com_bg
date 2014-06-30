@@ -1,31 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="3.2" method="upgrade">
-	<name>Beachgreens</name>
+	<name>BG</name>
 	<author>Andrew Thomas</author>
+	<authorEmail>git-user@poproar.com</authorEmail>
+	<authorUrl>http://github.com/poproar/com_bg</authorUrl>
 	<creationDate>August 2013</creationDate>
 	<copyright>(C) 2005 - 2014  All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<authorEmail>git-user@poproar.com</authorEmail>
-	<version>3.2.0</version>
-	<description>COM_BG_XML_DESCRIPTION</description>
+	<version>0.2.0</version>
+	<description>I am the xml file found in the admin folder</description>
 
-	<administration>
+	<!-- Public front end files -->
+	<files folder="site">
+
+	</files>
+
+	<!-- Front end translation files -->
+	<languages folder="language/site">
+		<language tag="en-GB">en-GB/en-GB.com_bg.ini</language>
+	</languages>
 	
-			<filename>bg.php</filename>
-			<filename>access.xml</filename>
-			<filename>config.xml</filename>
-			<filename>dispatcher.php</filename>
-			<filename>index.html</filename>
+	<!-- SQL query files to execute on installation -->
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.sql</file>
+			<file driver="mysql">sql/install.mysql.sql</file>
 			
-			<folder>controllers</folder>
+			<file driver="mysqli" charset="utf8">sql/install.mysql.sql</file>
+			<file driver="mysqli">sql/install.mysql.sql</file>
+		</sql>
+	</install>
+
+	<!-- SQL query files to execute on uninstallation -->
+	<uninstall>
+		<sql>
+	
+		</sql>
+	</uninstall>
+	
+	<!-- SQL files to run on update -->
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+			<schemapath type="mysqli">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+	
+	<!-- Media files -->
+	<media destination="com_bg" folder="media">
+		<folder>css</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<filename>index.html</filename>
+	</media>
+	
+	<!-- Administrator back-end section -->
+	<administration>
+		<!-- Administration menu -->
+		<menu view="cpanel"
+			img="../media/com_bg/images/bg-16.png">COM_BG</menu>
+
+		<!-- Back-end files -->
+		<files folder="admin">
+			<folder>fields</folder>
+			<folder>filters</folder>
+			<folder>helpers</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
 			<folder>models</folder>
 			<folder>views</folder>
-			<folder>fields</folder>
-			<folder>tables</folder>
-		
-		<languages>
+			<folder>controllers</folder>
 
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>fof.xml</filename>
+			<filename>bg.php</filename>
+			<filename>dispatcher.php</filename>
+			<filename>toolbar.php</filename>
+			<filename>index.html</filename>
+		</files>
+
+		<!-- Back-end translation files -->
+		<languages folder="language/admin">
+			<language tag="en-GB">en-GB/en-GB.com_bg.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_bg.sys.ini</language>
 		</languages>
-		
+
 	</administration>
 </extension>
