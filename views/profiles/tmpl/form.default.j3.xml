@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+	lessfiles="media://com_bg/css/backend.less||media://com_bg/css/backend.css"
+	type="browse"
+	show_header="1"
+	show_filters="1"
+	show_pagination="1"
+	norows_placeholder="COM_BG_COMMON_NORECORDS"
+>
+	<headerset>
+		<!-- LABELS DEFAULT TO componentname_modelname_fieldname_LABEL 
+		so: for next date it would be COM_BG_CUSTOMERS_NEXT_DATE_LABEL-->
+        <header name="cb_ordering" type="ordering"
+        		label="Ordering"
+                class="nowrap center hidden-phone"
+                sortable="true"
+                tdwidth="10%" />
+
+		<header name="id" type="rowselect"
+                class="hidden-phone" 
+                tdwidth="1%" />
+
+		<header name="cb_status" type="fieldselectable"
+				show_archived="true"
+				show_trashed="true"
+                style="min-width:55px"
+                tooltip="Close"
+                class="nowrap center"
+                label="JSTATUS"
+                sortable="true"
+                tdwidth="1%" >
+                <option value="1">Active</option>
+                <option value="0">Closed</option>
+                <option value="2">Pick Up Only</option>
+
+            </header>
+
+
+		<header name="user_id" type="field" 
+                label="Name"/>
+
+		<header name="cb_next" type="duedate" 
+                label="Next"
+                class=""
+                sortable="true"
+                buttons="true" />
+
+        <header name="cb_shift" type="fieldselectable" 
+                label="Shift"
+                source_file="admin://components/com_bg/helpers/shifts.php"
+				source_class="BgHelperShifts"
+				source_method="getOptions"
+                class="nowrap center hidden-phone"
+                sortable="true" />
+
+		<header name="cb_last" type="field" 
+                label="Last" 
+                class="nowrap center"
+                sortable="true" />
+
+		<header name="cb_size" type="model"
+			    model="BgModelSizes"
+			    key_field="bg_size_id" 
+			    value_field="title"
+                label="Size"
+                class="nowrap center hidden-phone"
+			    sortable="true" />
+
+		<header name="cb_ratio" type="fieldselectable"
+                label="Ratio"
+                class="center hidden-phone"
+			    sortable="true" />
+
+        <header name="cb_freq" type="model"
+			    model="BgModelFreqs"
+			    key_field="bg_freq_id" 
+			    value_field="title"
+                label="ω"
+                class="center hidden-phone"
+			    sortable="true" />
+
+		<header name="cb_day" type="filterselectable"
+				label="Day"
+				source_file="admin://components/com_bg/filters/days.php"
+				source_class="BgFilterDays"
+				source_method="getOptions" />
+
+        <header name="cb_logins" type="field" 
+                label="Logins" 
+                class="nowrap center hidden-phone"
+                sortable="true" 
+                tdwidth="1%" />
+
+        <header name="cb_numdelivered" type="field" 
+                label="Deliveries" 
+                class="nowrap center hidden-phone"
+                sortable="true" 
+                tdwidth="1%" />
+
+        <header name="cb_crates" type="field" 
+                label="Crates" 
+                class="nowrap center hidden-phone"
+                sortable="true" 
+                tdwidth="1%" />
+
+		<header name="weekSearch" type="filterselectable"
+			    label="Week" >
+			<option value="thisWeek">This Week</option>
+			<option value="nextWeek">Next Week</option>
+			<option value="lastWeek">Last Week</option>
+		</header>
+
+		<header name="isNew" type="filterselectable"
+			    label="New" >
+			<option value="1">Show only new</option>
+		</header>           
+               
+	</headerset>
+
+	<fieldset name="items">
+        <field name="cb_ordering" type="ordering" class="input input-mini"/>
+		<field name="id" type="selectrow"/>
+        <field name="cb_status" type="published"
+        	tooltip="Close"/>
+
+		<field name="user_id" type="customer"
+			show_avatar="false"
+            avatar_size="48"
+			show_link="true"
+			show_id="false"
+			show_username="false"
+			map_link="true"
+			link_url="index.php?option=com_comprofiler&amp;task=showusers&amp;view=showusers#edit&amp;id=[ITEM:ID]"
+			class="todoitem"
+			empty_replacement="(empty_rereplacement)"
+		 />
+
+		<field name="cb_next" type="duedate" format="D M dS" filter="SERVER_UTC"/>
+
+        <field name="cb_shift" type="field" 
+                class="nowrap center hidden-phone" />
+
+		<field name="cb_last" type="lastdate" class="disabled nowrap center" format="D M d" filter="server_utc"/>
+		
+		<field name="cb_size" type="model"
+			    model="BgModelSizes"
+			    key_field="bg_size_id" 
+			    value_field="title"
+                class="nowrap center hidden-phone" />
+
+		<field name="cb_ratio" type="field"
+			    model="BgModelRatios"
+			    key_field="percentage" 
+			    value_field="title"
+                class="nowrap center hidden-phone"/>
+
+		<field name="cb_freq" type="model"
+			    model="BgModelFreqs"
+			    key_field="bg_freq_id" 
+			    value_field="bg_freq_id"
+                class="nowrap center hidden-phone" />
+
+        <field name="cb_logins" type="field" 
+                class="nowrap center hidden-phone" />
+
+        <field name="cb_numdelivered" type="field" 
+                class="nowrap center hidden-phone" />
+
+        <field name="cb_crates" type="field" 
+                class="nowrap center hidden-phone" />
+
+	</fieldset>
+</form>
