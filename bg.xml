@@ -9,17 +9,8 @@
 	<version>3.2.0</version>
 	<description>COM_BG_XML_DESCRIPTION</description>
 
-	<files folder="site">
-
-	</files>
-	
-	<languages folder="site">
-		
-	</languages>
-
 	<administration>
 	
-		<files folder="admin">
 			<filename>bg.php</filename>
 			<filename>access.xml</filename>
 			<filename>config.xml</filename>
@@ -31,7 +22,6 @@
 			<folder>views</folder>
 			<folder>fields</folder>
 			<folder>tables</folder>
-		</files
 		
 		<languages folder="admin">
 
