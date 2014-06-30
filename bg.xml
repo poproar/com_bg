@@ -21,7 +21,7 @@
 	</languages>
 	
 	<!-- SQL query files to execute on installation -->
-	<install>
+	<!--install>
 		<sql>
 			<file driver="mysql" charset="utf8">sql/install.mysql.sql</file>
 			<file driver="mysql">sql/install.mysql.sql</file>
@@ -29,7 +29,7 @@
 			<file driver="mysqli" charset="utf8">sql/install.mysql.sql</file>
 			<file driver="mysqli">sql/install.mysql.sql</file>
 		</sql>
-	</install>
+	</install-->
 
 	<!-- SQL query files to execute on uninstallation -->
 	<uninstall>
@@ -39,12 +39,12 @@
 	</uninstall>
 	
 	<!-- SQL files to run on update -->
-	<update>
+	<!--update>
 		<schemas>
 			<schemapath type="mysql">sql/updates/mysql</schemapath>
 			<schemapath type="mysqli">sql/updates/mysql</schemapath>
 		</schemas>
-	</update>
+	</update-->
 	
 	<!-- Media files -->
 	<media destination="com_bg" folder="media">
