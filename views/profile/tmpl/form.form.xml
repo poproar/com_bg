@@ -5,61 +5,46 @@
     tabbed="1"
 >
 	<fieldset name="basic_configuration"
-		label="COM_BG_PROFILES_GROUP_BASIC"
+		label="Look at ledge customer view"
 		description="COM_BG_PROFILES_GROUP_BASIC_DESC"
 		class="tab-pane active"
 	>
-		<field name="title" type="text"
-			class="inputbox"
-			label="COM_BG_PROFILES_FIELD_TITLE"
+		<field name="firstname" type="text"
+			class="input-mini"
+			label="First Name"
 			labelclass="bg-label bg-label-main"
 			required="true"
 			size="50"
 		 />
 
-		<field name="next" type="calendar"
-			class="inputbox"
-			label="COM_BG_PROFILES_FIELD_NEXT"
+		<field name="cb_next" type="calendar"
+			class="input-small"
+			label="Next Delivery"
 			labelclass="bg-label"
 			required="true"
 			size="20"
 			default="NOW"
 		 />
-		<field name="enabled" type="list" label="JSTATUS"
+		<field name="cb_status" type="model" label="JSTATUS"
+		    model="BgModelStatuses"
+		    key_field="value" 
+            value_field="title"
 			labelclass="bg-label"
-			description="JFIELD_PUBLISHED_DESC" class="inputbox"
+			class="input-medium"
 			filter="intval" size="1" default="1"
 		>
-			<option value="1">JPUBLISHED</option>
-			<option value="0">JUNPUBLISHED</option>
 		</field>
 	</fieldset>
 
 	<fieldset name="description_group"
-		label="COM_BG_PROFILES_GROUP_DESCRIPTION"
-		description="COM_BG_PROFILES_GROUP_DESCRIPTION_DESC"
+		label="I should be a tab?"
 		class="tab-pane"
 	>
-		<field name="description" type="editor"
-			label=""
+		<field name="cb_notes" type="textarea"
+			label="Notes"
 			class="inputbox"
 			required="false"
-			filter="JComponentHelper::filterText" buttons="true"
 		/>
 	</fieldset>
 
-  <fieldset name="rules" class="sidebar">
-
-    <field name="asset_id" type="hidden" emptylabel="true" filter="unset" />
-
-    <field name="rules"
-            type="rules"
-            emptylabel="true"
-            translate_label="false"
-            filter="rules"
-            validate="rules"
-            class="inputbox"
-            component="com_bg"
-            section="unit" />
-  </fieldset>
 </form>

@@ -30,8 +30,10 @@
                 sortable="true"
                 tdwidth="1%" >
                 <option value="1">Active</option>
-                <option value="0">Closed</option>
+                <option value="0">Missing</option>
+                <option value="-2">Closed</option>
                 <option value="2">Pick Up Only</option>
+                
 
             </header>
 
@@ -130,7 +132,7 @@
 			show_id="false"
 			show_username="false"
 			map_link="true"
-			link_url="index.php?option=com_comprofiler&amp;task=showusers&amp;view=showusers#edit&amp;id=[ITEM:ID]"
+			link_url="index.php?option=com_bg&amp;view=profile&amp;id=[ITEM:ID]"
 			class="todoitem"
 			empty_replacement="(empty_rereplacement)"
 		 />

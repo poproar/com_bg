@@ -16,7 +16,7 @@ class BgModelProfiles extends FOFModel
 		$query = parent::buildQuery($overrideLimits = false);
         	//$this->setState('filter_order', 'bg_day_id');
 
-        	$query->where($db->qn('cb_status').'  is not null'); // new versus active? featured?
+        	$query->where($db->qn('acceptedterms').'  = 1'); // new versus active? featured?
 
 
         	$week = $this->getState('weekSearch', null);
