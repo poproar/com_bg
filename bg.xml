@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.2" method="upgrade">
+	<name>com_bg</name>
+	<author>Andrew Thomas</author>
+	<creationDate>August 2013</creationDate>
+	<copyright>(C) 2005 - 2014  All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>git-user@poproar.com</authorEmail>
+	<version>3.2.0</version>
+	<description>COM_BG_XML_DESCRIPTION</description>
+
+	<files folder="site">
+
+	</files>
+	
+	<languages folder="site">
+		
+	</languages>
+
+	<administration>
+	
+		<files folder="admin">
+			<filename>bg.php</filename>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>dispatcher.php</filename>
+			<filename>index.html</filename>
+			
+			<folder>controllers</folder>
+			<folder>models</folder>
+			<folder>views</folder>
+			<folder>fields</folder>
+			<folder>tables</folder>
+		</files
+		
+		<languages folder="admin">
+
+		</languages>
+		
+	</administration>
+</extension>
