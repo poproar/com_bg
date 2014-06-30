@@ -9,12 +9,15 @@ defined('_JEXEC') or die();
 
 class BgTableProfile extends FOFTable
 {
-  function __construct( $table, $key, &$db )
+	function __construct( $table, $key, &$db, $config )
 	{
-	  $table = '#__comprofiler';
+		$table = '#__comprofiler';
 		$key = 'id';
-		
-		
-		parent::__construct($table, $key, $db);
+
+		$this->setColumnAlias('enabled', 'cb_status');
+		$this->setColumnAlias('ordering', 'cb_ordering');
+
+		parent::__construct($table, $key, $db, $config);
+
 	}
 }
