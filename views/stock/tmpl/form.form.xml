@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+	lessfiles="media://com_bg/css/backend.less||media://com_bg/css/backend.css"
+	validate="true"
+>
+	<fieldset name="items" label="Product Details"
+		description="things we can edit"
+		class="span8"
+	>
+		<field name="bg_stock_id" type="hidden"
+               emptylabel="1"  />
+
+        <field name="title" type="field" 
+                label="Product name"
+               description="please give this a meaningful name"/>
+
+        <field name="selling_price" type="text" 
+               class="input-small"
+               size="15"
+               label="Listed price $" 
+               required="true"
+               validate="numeric"
+                />
+
+         <field name="qty_available" type="integer" label="On hand"
+			labelclass="bg-label"
+			description="enter -1 if doesn't matter" class="input-mini"
+			filter="intval" first="-1" step="1" last="128"
+		 />
+
+         <field name="bg_unit_id" type="model"
+                label="unit type"
+                model="BgModelUnits"
+			    key_field="bg_unit_id" 
+			    value_field="title" />
+
+        <field name="description" type="textarea"
+			label="Description"
+			class="inputbox"
+            rows="8"
+			required="false"
+			filter="JComponentHelper::filterText"
+		/>
+
+               
+        <field name="enabled" type="list" label="JSTATUS"
+			labelclass="bg-label"
+			description="JFIELD_PUBLISHED_DESC" class="btn"
+			filter="intval" size="1" default="1"
+		>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
+
+	</fieldset>
+</form>
