@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+	lessfiles="media://com_bg/css/backend.less||media://com_bg/css/backend.css"
+	validate="true"
+    class="row-fluid"
+>
+	<fieldset name="items" label="Order Details"
+		description="things we can edit"
+		class="span4"
+	>
+
+		<field name="bg_order_id" type="hidden" emptylabel="1"/>
+
+		 <field name="user_id" type="user"
+            label="User"
+            required="true"
+			class=""
+		 />
+
+		<field name="week" type="calendar" 
+            class="inputbox"
+            label="Week"
+            labelclass="week-label"
+            required="true"
+            default="NOW"
+            size="5"
+            filter="user_utc"
+        />
+		
+		<field name="bg_size_id" type="model"
+			model="BgModelSizes"
+			key_field="bg_size_id" 
+			value_field="title"
+            label="Size"
+        >
+        <option value="0">Pick Up Only</option>
+    </field>
+		<field name="bg_ratio_id" type="model"
+			model="BgModelRatios"
+			key_field="bg_ratio_id" 
+			value_field="title"
+            label="Ratio"
+        />
+
+        <field name="subtotal" type="text" 
+               class="input-small"
+               size="15"
+               label="at $" 
+               required="true"
+               validate="numeric" />
+
+        <field name="total" type="text" 
+               class="input-small"
+               size="15"
+               label="Total" 
+               required="true"
+               validate="numeric" />
+
+		<field name="enabled" type="list" label="JSTATUS"
+			labelclass="bg-label"
+			description="JFIELD_PUBLISHED_DESC" class="inputbox"
+			filter="intval" size="1" default="1"
+		>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
+		
+	</fieldset>
+
+</form>
