@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+	lessfiles="media://com_bg/css/backend.less||media://com_bg/css/backend.css"
+	type="browse"
+	show_header="1"
+	show_filters="1"
+	show_pagination="1"
+	norows_placeholder="COM_BG_COMMON_NORECORDS"
+>
+	<headerset>
+
+        <header name="ordering" type="ordering"
+                class="nowrap center hidden-phone"
+                sortable="true"
+                tdwidth="10%" />
+
+		<header name="bg_addon_id" type="rowselect"
+                class="hidden-phone" 
+                tdwidth="1%" />
+
+		<header name="enabled" type="published"
+                style="min-width:55px"
+                class="nowrap center"
+                label="JSTATUS"
+                sortable="true"
+                tdwidth="1%" />
+
+		<header name="user_id" type="field" 
+                label="Customer"/>
+
+		<header name="bg_stock_id" type="model"
+			    model="BgModelStocks"
+			    key_field="bg_stock_id" 
+			    value_field="title"
+                label="Item"
+                class="nowrap center hidden-phone"
+			    sortable="true" />
+
+        <header name="qty" type="field" 
+                label="Qty"/>
+
+        <header name="purchase_price" type="field" 
+                label="Price"/>
+
+        <header name="always" type="alwaysselectable" 
+                label="Always"/>
+
+        <header name="modified_on" type="field" 
+                label="changed" 
+                class="nowrap center"
+                sortable="true" />
+
+         <header name="modified_by" type="user" 
+                label="by" 
+                class="nowrap center"
+                sortable="true" />
+	
+               
+	</headerset>
+
+	<fieldset name="items">
+        <field name="ordering" type="ordering" width="3" />
+		<field name="bg_addon_id" type="selectrow"/>
+        <field name="enabled" type="published"/>
+
+		
+        <field name="user_id" type="user"
+            show_avatar="false"
+			show_link="false"
+			show_id="false"
+			show_username="false"
+            show_email="false"
+			class="todoitem"
+			empty_replacement="(empty_rereplacement)"
+		 />
+
+		<field name="bg_stock_id" type="model"
+			    model="BgModelStocks"
+			    key_field="bg_stock_id" 
+			    value_field="title" />
+
+        <field name="qty" type="text" />
+
+        <field name="purchase_price" type="text" />
+
+        <field name="always" type="checkmark" />
+
+        <field name="modified_on" type="changedate" />
+
+        <field name="modified_by" type="user"
+            show_avatar="false"
+			show_link="false"
+			show_id="false"
+			show_username="false"
+            show_email="false" />
+
+	</fieldset>
+</form>
