@@ -23,7 +23,7 @@ class FOFFormFieldPrice extends FOFFormFieldText
 
 		if($this->item->subtotal != $this->item->total)
 		{	
-				$html .= '&nbsp;<a href="index.php?option=com_bg&amp;view=orderaddons&amp;bg_order_id='.$this->item->bg_order_id.'"><span class="icon-plus"></span></a>';
+				$html .= '&nbsp;<a href="index.php?option=com_bg&amp;view=lineitems&amp;bg_order_id='.$this->item->bg_order_id.'"><span class="icon-plus"></span></a>';
 		}
 
 		return $html;
