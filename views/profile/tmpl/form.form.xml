@@ -2,20 +2,25 @@
 <form
 	lessfiles="media://com_bg/css/backend.less||media://com_bg/css/backend.css"
 	validate="true"
+	class="row-fluid"
     tabbed="1"
 >
-	<fieldset name="basic_configuration"
-		label="Look at ledge customer view"
-		description="COM_BG_PROFILES_GROUP_BASIC_DESC"
-		class="tab-pane active"
+	<fieldset name="items"
+		label="Some items should be edited in the community builder user manager"
+		description="Description"
+		class="span4 tab-pane active"
 	>
-		<field name="firstname" type="text"
-			class="input-mini"
-			label="First Name"
-			labelclass="bg-label bg-label-main"
-			required="true"
-			size="50"
+		
+		<field name="user_id" type="user"
+			readonly="true"
+            label="User"
+			show_link="false"
+			show_id="false"
+			show_username="true"
+            required="true"
+			class=""
 		 />
+		
 
 		<field name="cb_next" type="calendar"
 			class="input-small"
@@ -24,7 +29,67 @@
 			required="true"
 			size="20"
 			default="NOW"
+		    filter="server_utc"
 		 />
+		
+		
+		<field name="cb_postpone" type="calendar" 
+            class="input-small"
+            label="Postpone"
+            labelclass="ppd-label"
+            required="false"
+            format="%Y-%m-%d"
+            default="0000-00-00"
+            size="5"
+            filter="server_utc"
+        />
+				
+		<field name="cb_size" type="model"
+			model="BgModelSizes"
+			key_field="bg_size_id" 
+			value_field="title"
+            label="Size"
+        />
+		<field name="cb_ratio" type="model"
+			model="BgModelRatios"
+			key_field="percentage" 
+			value_field="title"
+            label="Ratio"
+        />
+		<field name="cb_freq" type="model"
+			model="BgModelFreqs"
+			key_field="bg_freq_id" 
+			value_field="title"
+            label="Schedule"
+        >
+        	<!--option value="1">One Time</option-->
+        </field>
+
+        <field name="cb_day" type="radio" label="Day"
+			labelclass="bg-label"
+			description="" class="inputbox"
+			filter="intval" size="1"
+		>
+			<option value="3">Wed</option>
+			<option value="4">Thu</option>
+            <option value="5">Fri</option>
+		</field>
+
+        <field name="cb_shift" type="list" label="Shift"
+			labelclass="bg-label"
+			class="input-mini"
+			filter="intval" size="1" default="AM"
+		>
+			<option value="AM">AM</option>
+			<option value="PM">PM</option>
+		</field>
+
+	</fieldset>
+
+	<fieldset name="description_group"
+		label="I should be a tab?"
+		class="span4 tab-pane"
+	>
 		<field name="cb_status" type="model" label="JSTATUS"
 		    model="BgModelStatuses"
 		    key_field="value" 
@@ -34,15 +99,16 @@
 			filter="intval" size="1" default="1"
 		>
 		</field>
-	</fieldset>
-
-	<fieldset name="description_group"
-		label="I should be a tab?"
-		class="tab-pane"
-	>
+		
 		<field name="cb_notes" type="textarea"
 			label="Notes"
 			class="inputbox"
+			required="false"
+		/>
+		
+		<field name="cb_crates" type="number"
+			label="Holds Crates"
+			class="input-mini"
 			required="false"
 		/>
 	</fieldset>
