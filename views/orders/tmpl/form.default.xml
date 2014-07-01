@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+	lessfiles="media://com_bg/css/backend.less||media://com_bg/css/backend.css"
+	type="browse"
+	show_header="1"
+	show_filters="1"
+	show_pagination="1"
+	norows_placeholder="COM_BG_COMMON_NORECORDS"
+>
+
+	<headerset>
+		<!-- LABELS DEFAULT TO componentname_modelname_fieldname_LABEL 
+		so: for next date it would be COM_BG_CUSTOMERS_NEXT_DATE_LABEL-->
+        <header name="ordering" type="ordering"
+                class="nowrap center hidden-phone"
+                sortable="true"
+                tdwidth="1%" />
+
+		<header name="bg_order_id" type="rowselect"
+                class="hidden-phone" 
+                tdwidth="1%" />
+
+		<header name="enabled" type="published"
+                style="min-width:55px"
+                class="nowrap center"
+                label="JSTATUS"
+                sortable="true"
+                tdwidth="1%" />
+
+		<header name="user_id" type="field" 
+                label="Name"/>
+
+		<header name="week" type="fielddate" 
+                label="Week"
+                class=""
+                sortable="true"
+                buttons="true" />
+
+		<header name="bg_size_id" type="model"
+			    model="BgModelSizes"
+			    key_field="bg_size_id" 
+			    value_field="title"
+                label="Size"
+                class="nowrap center hidden-phone"
+			    sortable="true"  >
+        <option value="0">Pick Up Only</option>
+    </header>
+
+		<header name="bg_ratio_id" type="model"
+			    model="BgModelRatios"
+			    key_field="bg_ratio_id" 
+			    value_field="title"
+                label="Ratio"
+                class="center hidden-phone"
+			    sortable="true" />
+
+		<header name="weekSearch" type="filterselectable"
+			    label="Week" >
+			<option value="thisWeek">This Week</option>
+			<option value="nextWeek">Next Week</option>
+			<option value="lastWeek">Last Week</option>
+		</header>
+
+		<header name="subtotal" type="field" 
+                class="nowrap center hidden-phone"
+                label="Subtotal"
+                sortable="true"/>
+
+        <header name="total" type="field" 
+                class="nowrap center hidden-phone" 
+                label="Grand Total"
+                sortable="true"/>
+               
+	</headerset>
+
+	<fieldset name="items">
+        <field name="ordering" type="ordering"/>
+		<field name="bg_order_id" type="selectrow"/>
+        <field name="enabled" type="published"/>
+
+		<field name="user_id" type="user"
+            show_avatar="false"
+			show_link="false"
+			show_id="false"
+			show_username="false"
+            show_email="false"
+			class="todoitem"
+			empty_replacement="(empty_rereplacement)"
+		/>
+
+
+		<field name="week" type="calendar" format="D M dS" filter="user_utc"/>
+		
+		<field name="bg_size_id" type="model"
+			    model="BgModelSizes"
+			    key_field="bg_size_id" 
+			    value_field="title"
+                class="nowrap center hidden-phone" > <option class="badge" value="0">Pick Up</option></field>
+
+		<field name="bg_ratio_id" type="model"
+			    model="BgModelRatios"
+			    key_field="bg_ratio_id" 
+			    value_field="percentage"
+                class="nowrap center hidden-phone"/>
+
+        <field name="subtotal" type="field" 
+                class="nowrap center hidden-phone" />
+
+        <field name="total" type="price" 
+                class="nowrap center hidden-phone" />
+
+	</fieldset>
+</form>
