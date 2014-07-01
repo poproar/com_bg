@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+	lessfiles="media://com_bg/css/backend.less||media://com_bg/css/backend.css"
+	validate="true"
+>
+	<fieldset name="items">
+		<field name="bg_addon_id" type="hidden" emptylabel="1"/>
+
+        <field name="user_id" type="user"
+            label="User"
+            required="true"
+			class=""
+		 />
+
+        <field name="bg_stock_id" type="model"
+			    model="BgModelStocks"
+			    key_field="bg_stock_id" 
+			    value_field="title" 
+                label="Item" />
+
+        <field name="qty" type="text" 
+               class="input-mini" 
+                label="qty"/>
+
+        <field name="purchase_price" type="text" 
+               class="input-small"
+               size="15"
+               label="at $" 
+               required="true"
+               validate="numeric" />
+
+        <field name="always" type="checkbox"
+               default="0"
+                class="btn btn-group" 
+                label="Always"/>
+
+         <field name="enabled" type="list" label="JSTATUS"
+			labelclass="bg-label"
+			description="JFIELD_PUBLISHED_DESC" class="btn"
+			filter="intval" size="1" default="1"
+		>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
+
+	</fieldset>
+</form>
