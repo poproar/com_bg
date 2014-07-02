@@ -48,7 +48,7 @@
 
 		<header name="bg_ratio_id" type="model"
 			    model="BgModelRatios"
-			    key_field="bg_ratio_id" 
+			    key_field="percentage" 
 			    value_field="title"
                 label="Ratio"
                 class="center hidden-phone"
@@ -57,7 +57,6 @@
 		<header name="weekSearch" type="filterselectable"
 			    label="Week" >
 			<option value="thisWeek">This Week</option>
-			<option value="nextWeek">Next Week</option>
 			<option value="lastWeek">Last Week</option>
 		</header>
 
@@ -99,7 +98,7 @@
 
 		<field name="bg_ratio_id" type="model"
 			    model="BgModelRatios"
-			    key_field="bg_ratio_id" 
+			    key_field="percentage" 
 			    value_field="percentage"
                 class="nowrap center hidden-phone"/>
 
