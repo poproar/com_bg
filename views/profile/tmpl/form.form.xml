@@ -49,7 +49,9 @@
 			key_field="bg_size_id" 
 			value_field="title"
             label="Size"
-        />
+        >
+            <option value="0">Pick Up</option>
+        </field>
 		<field name="cb_ratio" type="model"
 			model="BgModelRatios"
 			key_field="percentage" 

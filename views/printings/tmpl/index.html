@@ -1,0 +1,60 @@
+<html><head><title></title></head><body></body></html>
+<!----
+			header name="basic"
+			type="field" // see below
+			label="Custom Text"  // default to COM_COMNAME_MODEL_FIELD_LABEL
+			id="comname-model-field?"
+			tdwidth="10%"
+			sortable="true"
+			filterclass="css_class_for_filter" 
+			onchange="The Javascript code to be executed when the filtering widget's value is modified"
+-->
+
+
+<!----
+			
+			types="" available:
+			accesslevel :  viewing access level drop-down filtering widget
+			field : no filter just header 
+			fielddate : date selection search box filtering widget
+				readonly="true"  // Set to true to make the search box read only
+				disabled="true"  // Set to true to disable the search box (it displays but you can't click on it)
+				filter="user_utc"// Skip to show the date/time as entered. Set to SERVER_UTC to convert a date to UTC based on the server timezone. Set to USER_UTC to convert a date to UTC based on the user timezone.
+			fieldsearchable : search box filtering
+				searchfieldname="title" 
+				placeholder="Custom Text"
+				size="8"
+				maxlength="3"
+				sortable="true"
+				buttons="true" 
+				buttonclass="btn"
+				sortable="true"
+				filterclass="css_class_for_filter" 
+				onchange="The Javascript code to be executed when the filtering widget's value is modified"
+			fieldselectable
+				source_file="admin://components/com_bg/models/customers.php"
+				source_class="BgModelCustomers"
+				source_method="getSizes"
+				source_key="bg_size_id"
+				source_value="title"
+				source_translate="true"
+			fieldsql :  drop-down list filtering widget. The source of the filter values comes from an SQL query. unrecommended!
+				key_field="name_table_id"  // the table field to use as key
+				value_field="title" // the table field to display as text
+				query="SELECT id, title FROM TABLE" 
+			model : Similar to the fieldselectable header, but gets the options from a FOFModel descendant. You can set the following attributes on top of those of the 'fieldselectable' field type's:
+				model="FoobarModelItems"
+				key_field="name_table_id" The name of the field in the model's results which is used as the key value of the drop-down
+				value_field="title" The name of the field in the model's results which is used as the label of the drop-down
+				translate="true" Should the value field's value be passed through JText::_() before being displayed?
+				apply_access="true" Should we respect the view access level, if an access field is present in the model
+				none="Empty" The placeholder to be shown if the value is not found in the data returned by the model. This placeholder goes through JText, so you can use a language string if you like.
+			rowselect : Displays a checkbox which, when clicked, automatically selects all the row selection checkboxes in the list.
+			ordering : Displays a header field which allows reordering of your data.
+			published : Displays a header field and a drop-down filtering field for Published / Unpublished and related publishing options.
+				show_published="true" Should we show the Published status in the filter? Default: true
+				show_unpublished="true" Should we show the Unpublished status in the filter? Default: true
+				show_archived="true" Should we show the Archived status in the filter? Default: false
+				show_trash="true" Should we show the Trashed status in the filter? Default: false
+				show_all="true" Should we show the All status in the filter? Default: false. You actually don't need this as no selection results in all records, irrespective of their publish state, to be displayed.
+-->

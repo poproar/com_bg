@@ -4,10 +4,34 @@
 	validate="true"
     class="row-fluid"
 >
-	<fieldset name="items" label="Label"
+	<fieldset name="items" label="Add to order"
 		description="description"
 		class="span12"
 	>
+	
+    <field name="bg_order_id" type="text" 
+            label="emptylabel=1"/>
+
+    <field name="item" type="model"
+            model="BgModelStocks"
+            key_field="title" 
+            value_field="title" 
+            label="Item" />
+
+    <field name="qty" type="number"
+            class="input-mini"
+            label="Qty" />
+
+    <field name="purchase_price" type="text" 
+            class="input-small"
+            size="15"
+            label="at $" 
+            required="true"
+            validate="numeric" />
+
+    <field name="line_total" type="text"
+            readonly="true"
+            label="Total"/>
 	
 	</fieldset>
 </form>

@@ -11,10 +11,10 @@
 	<headerset>
 		<!-- LABELS DEFAULT TO componentname_modelname_fieldname_LABEL 
 		so: for next date it would be COM_BG_CUSTOMERS_NEXT_DATE_LABEL-->
-        <header name="ordering" type="ordering"
+        <!--header name="ordering" type="ordering"
                 class="nowrap center hidden-phone"
                 sortable="true"
-                tdwidth="1%" />
+                tdwidth="1%" /-->
 
 		<header name="bg_order_id" type="rowselect"
                 class="hidden-phone" 
@@ -69,11 +69,16 @@
                 class="nowrap center hidden-phone" 
                 label="Grand Total"
                 sortable="true"/>
+                
+        <header name="" type="link"
+                class="nowrap center"
+                label="Add An Item"
+                sortable="false" />
                
 	</headerset>
 
 	<fieldset name="items">
-        <field name="ordering" type="ordering"/>
+        <!--field name="ordering" type="ordering"/-->
 		<field name="bg_order_id" type="selectrow"/>
         <field name="enabled" type="published"/>
 
@@ -107,6 +112,12 @@
 
         <field name="total" type="price" 
                 class="nowrap center hidden-phone" />
+                
+        <field name="" type="link"
+                link_url="index.php?option=com_bg&amp;view=lineitem&amp;bg_order_id=[ITEM:ID]"
+                icon="plus"
+                class="nowrap center hidden-phone" />
+       
 
 	</fieldset>
 </form>
