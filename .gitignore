@@ -1,6 +1,7 @@
 /.zedstate
 /.gitignore
 /.htaccess
+/libraries/*
 /administrator/components/com_bg/libraries/*
 /administrator/cache/*
 /administrator/components/com_admin/*
