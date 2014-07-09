@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<metadata>
+    <foflib>
+        <ordering>2</ordering>
+    </foflib>
+    <view title="COM_FOOBAR_VIEW_ORDERS_TITLE">
+        <message><![CDATA[COM_FOOBAR_VIEW_ITEMS_DESC]]></message>
+    </view>
+</metadata>

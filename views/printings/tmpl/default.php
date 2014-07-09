@@ -9,17 +9,8 @@ JHtml::_('behavior.modal');
 
 $option =  $this->option . '&view=' . $this->view . '&tmpl=component&print=1&layout=';
 ?>
-<div class="form-actions">
-	<a class="btn btn-large btn-primary" href="index.php?option=<?php echo $option ?>deliverlist&page=" target="_blank">
-		<i class="icon-list"></i>&ensp;
-		<span><?php echo JText::_('Delivery List') ?></span></a>
-	<a class="btn btn-large" href="index.php?option=<?php echo $option ?>packlist&page=" target="_blank">
-		<i class="icon-cart"></i>&ensp;
-		<span><?php echo JText::_('Packing List') ?></span></a>
-	<a class="btn btn-large btn-inverse" href="index.php?option=com_bg&task=printings.outputLabels"  target="_blank">
-		<i class="icon-printer"></i>&ensp;
-		<span><?php echo JText::_('Labels') ?></span></a>
-	<a class="btn btn-large btn-danger" href="index.php?option=<?php echo $option ?>labels&page="  target="_blank">
-		<i class="icon-warning"></i>&ensp;
-		<span><?php echo JText::_('Create Orders') ?></span></a>
+<div class="">
+	<h3>Printing</h3>
+	<p>Use the buttons above to print the documents. Below will be a preview of items on each document.</p>
+	<p class="well">Legend</p>
 </div>
