@@ -16,10 +16,10 @@ $option =  $this->option . '&view=' . $this->view . '&tmpl=component&print=1&lay
 	<a class="btn btn-large" href="index.php?option=<?php echo $option ?>packlist&page=" target="_blank">
 		<i class="icon-cart"></i>&ensp;
 		<span><?php echo JText::_('Packing List') ?></span></a>
-	<a class="btn btn-large btn-inverse" href="index.php?option=<?php echo $option ?>labels&page=" target="_blank">
+	<a class="btn btn-large btn-inverse" href="index.php?option=com_bg&task=printings.outputLabels"  target="_blank">
 		<i class="icon-printer"></i>&ensp;
 		<span><?php echo JText::_('Labels') ?></span></a>
-	<a class="btn btn-large btn-danger" href="index.php?option=<?php echo $option ?>&task=orders.insertDummy">
+	<a class="btn btn-large btn-danger" href="index.php?option=<?php echo $option ?>labels&page="  target="_blank">
 		<i class="icon-warning"></i>&ensp;
 		<span><?php echo JText::_('Create Orders') ?></span></a>
 </div>
