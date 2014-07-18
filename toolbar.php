@@ -39,7 +39,8 @@ class BgToolbar extends FOFToolbar
 			JToolBarHelper::editList();
 			JToolBarHelper::archiveList('archive', 'Pick Up Only');
 //			JToolBarHelper::publishList();
-     		JToolBarHelper::unpublishList('unpublish', 'Close');
+     		JToolBarHelper::unpublishList('unpublish', 'Missing');
+			JToolBarHelper::trash('trash', 'Close');
 		}
 //		if($this->perms->create) {
 //			JToolBarHelper::addNew();
