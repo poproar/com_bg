@@ -2,6 +2,7 @@
 /.gitignore
 /.htaccess
 /libraries/*
+/sql/*
 /administrator/components/com_bg/libraries/*
 /administrator/cache/*
 /administrator/components/com_admin/*
